@@ -1,0 +1,9 @@
+    local procedure EnsureResourcesCreatedAutomatically()
+    var
+        HumanResourcesSetup: Record "Human Resources Setup";
+    begin
+        if HumanResourcesSetup.Get() then begin
+            HumanResourcesSetup."Automatically Create Resource" := true;
+            HumanResourcesSetup.Modify();
+        end;
+    end;
